@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<!--
+	Synchronous by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Synchronous by TEMPLATED</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]>
+		<script src="../HackNYU/js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="../HackNYU/js/skel.min.js"></script>
+		<script src="../HackNYU/js/skel-panels.min.js"></script>
+		<script src="../HackNYU/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]>
+		<link rel="stylesheet" href="../HackNYU/css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" href="../HackNYU/css/ie/v9.css" /><![endif]-->
+		<style type="text/css">
+		.auto-style1 {
+			text-align: center;
+		}
+		</style>
+	</head>
+	<body class="homepage">
+		<div id="wrapper">
+			
+			<!-- Header -->
+			<div id="header">
+				<div class="container"> 
+					
+					<!-- Logo -->
+					<div id="logo">
+						<h1><a href="#">FINFO</a></h1>
+						HackNYU2020
+					</div>
+					
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li class="active">
+							<a href="../HackNYU/index.html">Calculator 1</a></li>
+							<li>
+							<a href="../HackNYU/calculator2.html">Calculator 2</a></li>
+							<li>
+							<a href="../HackNYU/calculator3.html">Calculator 3</a></li>
+							<li>
+							<a href="../HackNYU/calculator4.html">Calculator 4</a></li>
+							<li>
+							<a href="../HackNYU/calculator5.html">Calculator 5</a></li>
+						</ul>
+					</nav>
+				</div>
+				<script type="text/javascript">
+					function calc1()
+					{
+						var total_cost = 1, down_payment = 1, intrest_rate = 1, years = 1, yearly_payment = 1, monthly_payment = 1;
+	
+						total_cost = document.getElementById("text1").value;
+						down_payment = document.getElementById("text2").value;
+						intrest_rate = document.getElementById("text3").value;
+						years = document.getElementById("text4").value;
+						if(intrest_rate >= 1)
+						{
+							intrest_rate = intrest_rate/100;
+						}
+	
+						var loan_amount = total_cost - down_payment;
+						
+						for (var i = 0; i < years; i++)
+						{
+							loan_amount = loan_amount * (1 + intrest_rate);
+							yearly_payment = loan_amount/years;
+							loan_amount = loan_amount - yearly_payment;
+						}
+						
+						monthly_payment = yearly_payment/12;
+						
+						document.getElementById("answer").innerHTML = monthly_payment;
+					}
+				</script>
+
+				<p class="auto-style1">This is a Mortgage payment calculator</p>
+				
+				<p class="auto-style1">What is the cost of your dream home? : <input id="text1" placeholder="Enter in dollars"></p>
+				<p class="auto-style1">How much will be your down payment? : <input id="text2" placeholder="Enter in dollars"></p>
+				<p class="auto-style1">What is the approximate intrest rate for your loan? : <input id="text3" placeholder="Enter as percent"></p>
+				<p class="auto-style1">How long is the term of your mortgage? : <input id="text4" placeholder="Enter an integer"></p>
+				<br>
+				<button onclick = "calc1()" id="btn1">Try it!</button>
+				<p class="auto-style1">Your monthly payment is : $<output id="answer"></output></p>
+
+			</div>
+			<!-- /Header -->
+		</div>
+	</body>
+</html>
